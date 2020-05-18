@@ -1,0 +1,24 @@
+Model Technology ModelSim SE-64 vmap 10.5c Lib Mapping Utility 2016.07 Jul 20 2016
+vmap -c 
+Warning: vmap will not overwrite local modelsim.ini.
+Warning: Library already exists at "work-msim".
+Warning: Library already exists at "altera".
+Model Technology ModelSim SE-64 vmap 10.5c Lib Mapping Utility 2016.07 Jul 20 2016
+vmap altera /opt-src/CMC/local/maagaard/kits-sim/altera-15.1/altera 
+Modifying modelsim.ini
+Warning: Library already exists at "altera_mf".
+Model Technology ModelSim SE-64 vmap 10.5c Lib Mapping Utility 2016.07 Jul 20 2016
+vmap altera_mf /opt-src/CMC/local/maagaard/kits-sim/altera-15.1/altera_mf 
+Modifying modelsim.ini
+Warning: Library already exists at "lpm".
+Model Technology ModelSim SE-64 vmap 10.5c Lib Mapping Utility 2016.07 Jul 20 2016
+vmap lpm /opt-src/CMC/local/maagaard/kits-sim/altera-15.1/lpm 
+Modifying modelsim.ini
+Warning: Library already exists at "altera_primitives".
+Model Technology ModelSim SE-64 vmap 10.5c Lib Mapping Utility 2016.07 Jul 20 2016
+vmap altera_primitives /opt-src/CMC/local/maagaard/kits-sim/altera-15.1/altera_primitives 
+Modifying modelsim.ini
+Warning: Library already exists at "stratixiv".
+Model Technology ModelSim SE-64 vmap 10.5c Lib Mapping Utility 2016.07 Jul 20 2016
+vmap stratixiv /opt-src/CMC/local/maagaard/kits-sim/altera-15.1/stratixiv 
+Modifying modelsim.ini

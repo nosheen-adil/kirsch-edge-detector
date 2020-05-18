@@ -1,0 +1,112 @@
+//  Precision RTL Synthesis 64-bit 2015.2.16 (PS2015.2.1 Production Release) Tue Jan  5 23:04:49 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux n2adil@eceTesla1 #49-Ubuntu SMP Wed Feb 6 09:33:07 UTC 2019 4.15.0-46-generic x86_64
+//  
+//  Start time Sat Mar 30 21:17:18 2019
+
+***************************************************************
+Device Utilization for EP4SGX70HF35M
+***************************************************************
+Resource                          Used    Avail   Utilization
+---------------------------------------------------------------
+IOs                               34      -            -
+LUTs                              217     58080     0.37%
+Registers                         187     58080     0.32%
+Memory Bits                       6144    6617088   0.09%
+DSP block 18-bit elems            0       384       0.00%
+---------------------------------------------------------------
+
+**************************************************************
+
+Library: OPERATORS    Cell: ram_dq_8_2    View: IMPLEMENTATION
+
+**************************************************************
+
+  Cell                     Library  References     Total Area
+
+ VCC                       stratixiv     1 x
+ altsyncram_8_8_256_2_2    OPERATORS     1 x
+
+ Number of ports :                      32
+ Number of nets :                       27
+ Number of instances :                   2
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Number of Memory Bits :              2048
+ Number of accumulated instances :       2
+
+**************************************************************
+
+Library: OPERATORS    Cell: ram_dq_8_1    View: IMPLEMENTATION
+
+**************************************************************
+
+  Cell                     Library  References     Total Area
+
+ VCC                       stratixiv     1 x
+ altsyncram_8_8_256_2_1    OPERATORS     1 x
+
+ Number of ports :                      32
+ Number of nets :                       27
+ Number of instances :                   2
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Number of Memory Bits :              2048
+ Number of accumulated instances :       2
+
+**************************************************************
+
+Library: OPERATORS    Cell: ram_dq_8_0    View: IMPLEMENTATION
+
+**************************************************************
+
+  Cell                     Library  References     Total Area
+
+ VCC                       stratixiv     1 x
+ altsyncram_8_8_256_2_0    OPERATORS     1 x
+
+ Number of ports :                      32
+ Number of nets :                       27
+ Number of instances :                   2
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Number of Memory Bits :              2048
+ Number of accumulated instances :       2
+
+*******************************************
+
+Library: work    Cell: kirsch    View: main
+
+*******************************************
+
+  Cell                   Library  References     Total Area
+
+ GND                     stratixiv     1 x
+ NOT                     stratixiv    16 x
+ VCC                     stratixiv     1 x
+ dffeas                  stratixiv   187 x      1    187 Registers
+ ram_dq_8_0              OPERATORS     1 x   2048   2048 Memory Bits
+ ram_dq_8_1              OPERATORS     1 x   2048   2048 Memory Bits
+ ram_dq_8_2              OPERATORS     1 x   2048   2048 Memory Bits
+ stratixiv_lcell_comb    stratixiv   217 x      1    217 LUTs
+
+ Number of ports :                      34
+ Number of nets :                      516
+ Number of instances :                 425
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of LCs :                         0
+ Number of LUTs :                      217
+ Number of Memory Bits :              6144
+ Number of Registers :                 187
+ Number of accumulated instances :     428

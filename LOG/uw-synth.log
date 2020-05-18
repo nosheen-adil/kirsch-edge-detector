@@ -1,0 +1,175 @@
+    INFO: Starting PRECISION_RTL for logic synthesis
+precision: Setting MGC_HOME to /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home ...
+precision: Executing on platform: (UNKNOWN and UNSUPPORTED) Linux eceTesla1 4.15.0-46-generic #49-Ubuntu SMP Wed Feb 6 09:33:07 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+//  Precision RTL Synthesis 64-bit 2015.2.16 (PS2015.2.1 Production Release) Tue Jan  5 23:04:49 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux n2adil@eceTesla1 #49-Ubuntu SMP Wed Feb 6 09:33:07 UTC 2019 4.15.0-46-generic x86_64
+//  
+//  Start time Sat Mar 30 21:17:18 2019
+-------------------------------------------------
+Info: Logging session transcript to file precision.log
+Info: The Results Directory has been set to: uw_tmp
+Info: Moving session transcript to file uw_tmp/precision.log
+Info: Setting up the design to use synthesis library "stratixiv.syn"
+Info: The global max fanout is currently set to 1000 for Altera - Stratix IV.
+Info: Setting Part to: "EP4SGX70HF35M".
+Info: Setting Process to: "3".
+Info: USING DESIGN ARCH
+Info: Reading file: /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home/pkgs/psr/techlibs/stratixiv.syn.
+Info: Loading library initialization file /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home/pkgs/psr/userware/armstrong_rename.tcl
+Info: vhdlorder, Release 2015b.13
+Info: Files sorted successfully.
+Info: hdl-analyze, Release RTLC-Precision 2015b.13
+INFO: Analyzing "util.vhd"
+INFO: Analyzing "kirsch_synth_pkg.vhd"
+INFO: Analyzing "mem.vhd"
+INFO: Analyzing "kirsch.vhd"
+Info: Current working directory: uw_tmp.
+Info: RTLC-Driver, Release RTLC-Precision 2015b.13
+Info: Last compiled on Dec 24 2015 14:33:45
+Info: Initializing...
+Info: Partitioning design ....
+Info: RTLCompiler, Release RTLC-Precision 2015b.13
+Info: Last compiled on Dec 24 2015 15:06:12
+Info: Initializing...
+Info: Root Module work.kirsch(main): Pre-processing...
+Info: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Pre-processing...
+Info: Built-in hardware memory core inferred for variable ': mem.mem depth = 256, width = 8'.
+Info: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Compiling...
+Info: Root Module work.kirsch(main): Compiling...
+Info: "kirsch.vhd", line 140: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "o_col".
+Info: "kirsch.vhd", line 142: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "o_row".
+Info: Compilation successfully completed.
+Info: Counter Inferencing === Detected : 2, Inferred (Modgen/Selcounter/AddSub) : 2 (2 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 0), Local Vars : 0 ===
+Info: Total lines of RTL compiled: 356.
+Info: Total CPU time for compilation: 0.0 secs.
+Info: Overall running time for compilation: 2.0 secs.
+Info: Current working directory: uw_tmp.
+Info: Doing rtl optimizations.
+Info: "kirsch.vhd", line 176: : Inferred selective adder Instance 'instance:ix1363' of type 'cell:seladd_12_12_12_0_1'
+Info: Constraints: Precision will generate the constraint: create_clock [get_ports clk] -name clk -period 20 -waveform {0 10} on port:clk. Reason: setup_design -frequency. Please override the constraint if needed.
+Info: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+Info: Constraints: Precision Generated Clock Domains:
+Info: 	Domain Name: xmplr_ClockDomain_clk		Clock Name: clk
+Info: Finished compiling design.
+Info: Writing file: uw_tmp/kirsch_gate.vhd.
+Info: Info, Command 'auto_write' finished successfully
+Info: Writing file: uw_tmp/kirsch_gate.vhd.
+Info: Info, Command 'auto_write' finished successfully
+Info: Current working directory: uw_tmp.
+Info: Precision will use 6 processor(s).
+Info: Optimizing design view:.work.kirsch.main
+Info: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+Info: Constraints: Precision Generated Clock Domains:
+Info: 	Domain Name: xmplr_ClockDomain_clk		Clock Name: clk
+Info: Starting timing reports generation...
+Info: Timing reports generation done.
+Info: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+Info: Writing file: uw_tmp/kirsch.vhd.
+Info: Writing file: uw_tmp/kirsch.v.
+Info: Writing file: uw_tmp/kirsch.vqm.
+Info: -- Writing file uw_tmp/kirsch.tcl
+Info: exq_pr_compile_project gen_vcf kirsch 1
+Info: Finished synthesizing design.
+Info: Total CPU time for synthesis: 2.0 s secs.
+Info: Overall running time for synthesis: 3.0 s secs.
+Warning: Your synthesis will restart from the compile step.
+Info: Loading library initialization file /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home/pkgs/psr/userware/armstrong_rename.tcl
+Info: vhdlorder, Release 2015b.13
+Info: Files sorted successfully.
+Info: hdl-analyze, Release RTLC-Precision 2015b.13
+INFO: Analyzing "util.vhd"
+INFO: Analyzing "kirsch_synth_pkg.vhd"
+INFO: Analyzing "mem.vhd"
+INFO: Analyzing "kirsch.vhd"
+Info: Current working directory: uw_tmp.
+Info: RTLC-Driver, Release RTLC-Precision 2015b.13
+Info: Last compiled on Dec 24 2015 14:33:45
+Info: Initializing...
+Info: Partitioning design ....
+Info: RTLCompiler, Release RTLC-Precision 2015b.13
+Info: Last compiled on Dec 24 2015 15:06:12
+Info: Initializing...
+Info: Root Module work.kirsch(main): Pre-processing...
+Info: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Pre-processing...
+Info: Built-in hardware memory core inferred for variable ': mem.mem depth = 256, width = 8'.
+Info: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Compiling...
+Info: Root Module work.kirsch(main): Compiling...
+Info: "kirsch.vhd", line 140: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "o_col".
+Info: "kirsch.vhd", line 142: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "o_row".
+Info: Compilation successfully completed.
+Info: Counter Inferencing === Detected : 2, Inferred (Modgen/Selcounter/AddSub) : 2 (2 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 0), Local Vars : 0 ===
+Info: Total lines of RTL compiled: 356.
+Info: Total CPU time for compilation: 0.0 secs.
+Info: Overall running time for compilation: 1.0 secs.
+Info: Current working directory: uw_tmp.
+Info: Doing rtl optimizations.
+Info: "kirsch.vhd", line 176: : Inferred selective adder Instance 'instance:ix1363' of type 'cell:seladd_12_12_12_0_1'
+Info: Constraints: Precision will generate the constraint: create_clock [get_ports clk] -name clk -period 20 -waveform {0 10} on port:clk. Reason: setup_design -frequency. Please override the constraint if needed.
+Info: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+Info: Constraints: Precision Generated Clock Domains:
+Info: 	Domain Name: xmplr_ClockDomain_clk		Clock Name: clk
+Info: Finished compiling design.
+Info: Current working directory: uw_tmp.
+Info: Precision will use 6 processor(s).
+Info: Optimizing design view:.work.kirsch.main
+Info: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+Info: Constraints: Precision Generated Clock Domains:
+Info: 	Domain Name: xmplr_ClockDomain_clk		Clock Name: clk
+Info: Starting timing reports generation...
+Info: Timing reports generation done.
+Info: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+Info: Writing file: uw_tmp/kirsch.vhd.
+Info: Writing file: uw_tmp/kirsch.v.
+Info: Writing file: uw_tmp/kirsch.vqm.
+Info: -- Writing file uw_tmp/kirsch.tcl
+Info: exq_pr_compile_project gen_vcf kirsch 1
+Info: Finished synthesizing design.
+Info: Total CPU time for synthesis: 2.0 s secs.
+Info: Overall running time for synthesis: 3.0 s secs.
+Info: clk
+Info: 1
+Info: 0
+Info: Writing file: uw_tmp/kirsch_logic.sdf.
+Info: Using verilog names style for SDF.
+Info: Do 'set sdf_names_style vhdl' to use vhdl names style for SDF.
+Info: Info, Command 'auto_write' finished successfully
+Info: *** logic synthesis succeeded ***
+    INFO: generic-gate       netlist         written to uw_tmp/kirsch_gate.vhd
+    INFO: generic-gate       area estimate   written to RPT/area_gate.rpt
+    INFO: logic-synthesis    netlist         written to uw_tmp/kirsch_logic.vhd
+    INFO: logic-synthesis    area estimate   written to RPT/area_logic.rpt
+    INFO: logic-synthesis    timing estimate written to RPT/timing_logic.rpt
+    INFO: --------------------------------------------------------------------------------
+    INFO: AREA = 217 cells (217 luts, 187 regs) (estimated by logic-synthesis)
+    INFO: Speed on Stratix IV = 280 MHz,  3.57 ns (estimated by logic-synthesis)
+    INFO: --------------------------------------------------------------------------------
+    INFO: CRITICAL PATHS (slowest 5 paths, estimated by logic synthesis)
+    INFO: ..........Delays.........
+    INFO:  Total  Datapath  Routing          Source              Dest
+    INFO: ------  --------  -------   --------------------  ---------------------
+    INFO:   3.57     3.42     0.15    v(2)                  r1_ty(0)/d           
+    INFO:   3.57     3.42     0.15    r_e(0)                r1_ty(0)/d           
+    INFO:   3.56     3.41     0.15    r_e(1)                r1_ty(0)/d           
+    INFO:   3.56     3.41     0.15    r_c(0)                r1_ty(0)/d           
+    INFO:   3.55     3.40     0.15    r_c(1)                r1_ty(0)/d           
+    INFO: 
+    INFO: OPTIMALITY
+    INFO:              ..............latency...............
+    INFO:              =<  8cyc   9cyc  10cyc   11cyc   12cyc
+    INFO: optimality   =  1290   1227   1167    1110    1056
+    INFO: latency                 = 8
+    INFO: optimality with latency = 1290
+    INFO: 
+    INFO: ***********************************************
+    INFO: *
+    INFO: * uw-synth to STRATIXIV was successful
+    INFO: * log file stored in LOG/uw-synth.log
+    INFO: *
+    INFO: ***********************************************

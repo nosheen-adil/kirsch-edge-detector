@@ -1,0 +1,206 @@
+-------------------------------------------------------------------------------
+-- top_kirsch.vhd
+-- top level code for kirsch edge detector
+-------------------------------------------------------------------------------
+-- NOTE
+--   - pb are active lo
+-- 
+-------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.kirsch_synth_pkg.all;
+
+entity kirsch_top is
+  port (
+    --------------------------------------------------
+    reset_n    : in  std_logic;
+    clk        : in  std_logic;
+    --------------------------------------------------
+    uart_rx    : in  std_logic;  -- uart receive
+    uart_tx    : out std_logic;  -- uart transmit
+    --------------------------------------------------
+    sw         : in  std_logic_vector( 7 downto 0 );
+    pb         : in  std_logic_vector( 3 downto 0 );
+    --------------------------------------------------
+    seg7_en    : out std_logic_vector( 1 downto 0 ); 
+    seg7_data  : out std_logic_vector( 7 downto 0 );
+    --------------------------------------------------
+    led        : out std_logic_vector( 7 downto 0 )
+    --------------------------------------------------
+  );
+end entity;
+
+
+architecture main of kirsch_top is
+
+  signal reset          : std_logic;
+  signal k_i_valid      : std_logic;
+  signal k_i_pixel      : unsigned( 7 downto 0 );
+  signal k_o_valid      : std_logic;
+  signal k_o_edge       : std_logic;
+  signal k_o_dir        : direction_ty;
+  signal k_o_mode       : mode_ty;
+  signal k_o_row        : unsigned(7 downto 0);
+  signal k_o_col        : unsigned(7 downto 0);
+  signal k_o_data       : std_logic_vector(7 downto 0);
+
+  signal tx_is_loopback : std_logic;
+  signal start_have_tx_data : std_logic;
+  signal have_tx_data   : std_logic;
+  signal tx_valid       : std_logic;
+  signal prev_tx_busy        : std_logic;
+  signal tx_busy        : std_logic;
+  signal rx_valid       : std_logic;
+  signal rx_error       : std_logic;
+
+  signal tx_data        : std_logic_vector( 7 downto 0 );
+       
+       
+  signal seg7_num       : unsigned(7 downto 0);
+  signal seg7_pts       : std_logic_vector( 1 downto 0 );
+
+  signal uart_reset     : std_logic;
+  signal reset_count    : unsigned( 10 downto 0 );
+  
+begin
+
+  reset <= not( reset_n );
+
+  ------------------------------------------------------------
+  -- delay reset to the uart so that the uart has time to send
+  -- reset='1' back to the PC before the uart enters reset state
+
+  process begin
+    wait until rising_edge( clk );
+    if reset = '0' then
+      reset_count <= ( others => '0' );
+    else
+      reset_count <= reset_count + 1;
+    end if;
+  end process;
+
+  process begin
+    wait until rising_edge( clk );
+    if reset = '0' then
+      uart_reset <= '0';
+    elsif reset_count = 2 ** reset_count'length - 1 then
+      uart_reset <= '1';
+    end if;
+  end process;
+    
+  ------------------------------------------------------------
+  
+  u_uart: entity work.uart( main )
+    port map (
+      ----------------------------------------      
+      clk      => clk,
+      rst      => uart_reset,
+      baud     => '1', -- baud = 115 kbps
+      ----------------------------------------      
+      rx       => uart_rx,
+      rxrdy    => rx_valid,
+      unsigned( dout ) => k_i_pixel,
+      rxerr    => rx_error,
+      ----------------------------------------      
+      ld       => tx_valid,
+      din      => tx_data,
+      tx       => uart_tx,
+      txbusy   => tx_busy
+      ----------------------------------------      
+    );
+
+  ------------------------------------------------------------
+  -- force k_i_valid='0' during data synchronization
+  
+  k_i_valid <= rx_valid and pb(0);
+  
+  ------------------------------------------------------------
+  
+  u_kirsch: entity work.kirsch(main)
+    port map(
+      clk           => clk,
+      reset         => reset,
+      i_valid       => k_i_valid, 
+      i_pixel       => k_i_pixel,
+      o_valid       => k_o_valid,
+      o_edge        => k_o_edge,
+      o_dir         => k_o_dir,
+      o_mode        => k_o_mode,
+      o_row         => k_o_row,
+      o_col         => k_o_col
+    );
+
+  ------------------------------------------------------------
+  
+  k_o_data( 7 )          <= reset;
+  k_o_data( 6 )          <= rx_error;
+  k_o_data( 5 downto 4 ) <= k_o_mode;
+  k_o_data( 3 )          <= k_o_edge;
+  k_o_data( 2 downto 0 ) <= k_o_dir;
+
+  ------------------------------------------------------------
+  -- data loopback when pb(0) is pushed
+
+  -- for debugging purposes, use sw(7) for loopback
+  -- tx_is_loopback <= not pb(0) or sw(7);
+  --  led(7) <= sw(7);
+  
+  tx_is_loopback <= not pb(0);
+  
+  process begin
+    wait until rising_edge(clk);
+    if tx_is_loopback = '1' then
+      if rx_valid = '1' then
+        tx_data <= std_logic_vector( k_i_pixel );
+      end if;
+    else
+      if k_o_valid then 
+        tx_data <= k_o_data;
+      end if;
+    end if;
+  end process;
+
+  -- 1) reset forces tx_valid, so that the PC can detect that we've hit
+  --    reset even if there aren't any pixels being sent
+  -- 2) use rx_valid when pb(0) is pushed, else use k_o_valid
+  start_have_tx_data <=   '1'        when reset = '1'
+                     else rx_valid   when tx_is_loopback = '1'
+                     else k_o_valid;
+
+  -- we hold tx_data until tx_busy='0'
+  process begin
+    wait until rising_edge( clk );
+    have_tx_data <= start_have_tx_data or ( have_tx_data and not tx_valid );
+  end process;
+
+  -- If tx_valid='1' in the clock cycle that uart finishes sending data,
+  -- then tx_busy will stay '1', and so we cannot detect that it loaded
+  -- the data.  Here, we assert tx_valid only after tx_busy='0'.
+  -- This will deassert have_tx_data in the next clock cycle.
+  process begin
+    wait until rising_edge(clk);
+    prev_tx_busy <= tx_busy;
+  end process;
+  
+  tx_valid <= have_tx_data and not tx_busy and not prev_tx_busy;
+  
+  ------------------------------------------------------------
+  
+  seg7_pts  <= k_o_mode;
+  seg7_num  <= k_o_row;
+
+  u_seg7 : entity work.num_seg7( main )
+    port map
+      ( clk    => clk
+      , reset  => reset
+      , i_num  => unsigned( seg7_num )
+      , i_pts  => seg7_pts
+      , o_en   => seg7_en
+      , o_char => seg7_data
+      );
+  
+  ------------------------------------------------------------
+end architecture;
+

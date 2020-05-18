@@ -1,0 +1,33 @@
+Info: *******************************************************************
+Info: Running Quartus Prime Programmer
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
+    Info: Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Altera Program License 
+    Info: Subscription Agreement, the Altera Quartus Prime License Agreement,
+    Info: the Altera MegaCore Function License Agreement, or other 
+    Info: applicable license agreement, including, without limitation, 
+    Info: that your use is for the sole purpose of programming logic 
+    Info: devices manufactured by Altera and sold by Altera or its 
+    Info: authorized distributors.  Please refer to the applicable 
+    Info: agreement for further details.
+    Info: Processing started: Thu Apr 04 14:11:56 2019
+Info: Command: quartus_pgm uw_tmp/uw-dnld-quartus.cdf
+Info: Using programming cable "USB-Blaster [USB-0]"
+Info: Using programming file kirsch_top.sof with checksum 0x000DCE6F for device 10M08SAE144@1
+Info: Started Programmer operation at Thu Apr 04 14:11:57 2019
+Info: Configuring device index 1
+Info: Device 1 contains JTAG ID code 0x031820DD
+Info: Configuration succeeded -- 1 device(s) configured
+Info: Successfully performed operation(s)
+Info: Ended Programmer operation at Thu Apr 04 14:11:58 2019
+Info: Quartus Prime Programmer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4411 megabytes
+    Info: Processing ended: Thu Apr 04 14:11:58 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:00
+    INFO: Using SOF file : kirsch_top.sof

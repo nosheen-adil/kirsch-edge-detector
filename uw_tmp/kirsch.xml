@@ -1,0 +1,18 @@
+<interfaceDefinition version='1.2' language='vhdl' kind='component' name='kirsch'>
+	<useClause path='work.kirsch_synth_pkg.all' />
+	<useClause path='work.util.all' />
+	<useClause path='ieee.NUMERIC_STD.all' />
+	<useClause path='ieee.std_logic_1164.all' />
+	<portList>
+		<port name='clk' direction='in' type='STD_LOGIC' kind='' />
+		<port name='reset' direction='in' type='STD_LOGIC' kind='' />
+		<port name='i_valid' direction='in' type='STD_LOGIC' kind='' />
+		<port name='i_pixel' direction='in' type='UNSIGNED (7 downto 0)' kind='array' library='work' package='kirsch' packedDimension='(7 downto 0)' />
+		<port name='o_valid' direction='out' type='STD_LOGIC' kind='' />
+		<port name='o_edge' direction='out' type='STD_LOGIC' kind='' />
+		<port name='o_dir' direction='out' type='STD_LOGIC_VECTOR (2 downto 0)' kind='array' library='work' package='kirsch_synth_pkg' packedDimension='(2 downto 0)' />
+		<port name='o_mode' direction='out' type='STD_LOGIC_VECTOR (1 downto 0)' kind='array' library='work' package='kirsch_synth_pkg' packedDimension='(1 downto 0)' />
+		<port name='o_row' direction='out' type='UNSIGNED (7 downto 0)' kind='array' library='work' package='kirsch' packedDimension='(7 downto 0)' />
+		<port name='o_col' direction='out' type='UNSIGNED (7 downto 0)' kind='array' library='work' package='kirsch' packedDimension='(7 downto 0)' />
+	</portList>
+</interfaceDefinition>

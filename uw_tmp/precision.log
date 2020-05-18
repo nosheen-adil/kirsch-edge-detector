@@ -1,0 +1,141 @@
+# Info: [9566]: Logging session transcript to file /home/n2adil/ece327/proj/precision.log
+//  Precision RTL Synthesis 64-bit 2015.2.16 (PS2015.2.1 Production Release) Tue Jan  5 23:04:49 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux n2adil@eceTesla1 #49-Ubuntu SMP Wed Feb 6 09:33:07 UTC 2019 4.15.0-46-generic x86_64
+//  
+//  Start time Sat Mar 30 21:17:18 2019
+# -------------------------------------------------
+# Info: [9566]: Logging session transcript to file /home/n2adil/ece327/proj/precision.log
+# Info: [9575]: The Results Directory has been set to: /home/n2adil/ece327/proj/uw_tmp
+# Info: [9569]: Moving session transcript to file /home/n2adil/ece327/proj/uw_tmp/precision.log
+# Info: [15298]: Setting up the design to use synthesis library "stratixiv.syn"
+# Info: [574]: The global max fanout is currently set to 1000 for Altera - Stratix IV.
+# Info: [15324]: Setting Part to: "EP4SGX70HF35M".
+# Info: [15325]: Setting Process to: "3".
+# Info: USING DESIGN ARCH
+# Info: [3022]: Reading file: /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home/pkgs/psr/techlibs/stratixiv.syn.
+# Info: [633]: Loading library initialization file /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home/pkgs/psr/userware/armstrong_rename.tcl
+# Info: [40000]: vhdlorder, Release 2015b.13
+# Info: [40000]: Files sorted successfully.
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2015b.13
+# Info: [42502]: Analyzing input file "/home/n2adil/ece327/proj/util.vhd" ...
+# Info: [42502]: Analyzing input file "/home/n2adil/ece327/proj/kirsch_synth_pkg.vhd" ...
+# Info: [42502]: Analyzing input file "/home/n2adil/ece327/proj/mem.vhd" ...
+# Info: [42502]: Analyzing input file "/home/n2adil/ece327/proj/kirsch.vhd" ...
+# Info: [656]: Current working directory: /home/n2adil/ece327/proj/uw_tmp.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2015b.13
+# Info: [40000]: Last compiled on Dec 24 2015 14:33:45
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2015b.13
+# Info: [40000]: Last compiled on Dec 24 2015 15:06:12
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module work.kirsch(main): Pre-processing...
+# Info: [44506]: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Pre-processing...
+# Info: [45251]: Built-in hardware memory core inferred for variable ': mem.mem depth = 256, width = 8'.
+# Info: [44508]: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Compiling...
+# Info: [44523]: Root Module work.kirsch(main): Compiling...
+# Info: [44838]: "/home/n2adil/ece327/proj/kirsch.vhd", line 140: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "o_col".
+# Info: [44838]: "/home/n2adil/ece327/proj/kirsch.vhd", line 142: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "o_row".
+# Info: [44842]: Compilation successfully completed.
+# Info: [44841]: Counter Inferencing === Detected : 2, Inferred (Modgen/Selcounter/AddSub) : 2 (2 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 0), Local Vars : 0 ===
+# Info: [44856]: Total lines of RTL compiled: 356.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 2.0 secs.
+# Info: [656]: Current working directory: /home/n2adil/ece327/proj/uw_tmp.
+# Info: [15330]: Doing rtl optimizations.
+# Info: [9028]: "/home/n2adil/ece327/proj/kirsch.vhd", line 176: : Inferred selective adder Instance 'instance:ix1363' of type 'cell:seladd_12_12_12_0_1'
+# Info: [1075]: Constraints: Precision will generate the constraint: create_clock [get_ports clk] -name clk -period 20 -waveform {0 10} on port:clk. Reason: setup_design -frequency. Please override the constraint if needed.
+# Info: [1078]: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+# Info: Constraints: Precision Generated Clock Domains:
+# Info: 	Domain Name: xmplr_ClockDomain_clk		Clock Name: clk
+# Info: [659]: Finished compiling design.
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch_gate.vhd.
+# Info: Info, Command 'auto_write' finished successfully
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch_gate.vhd.
+# Info: Info, Command 'auto_write' finished successfully
+# Info: [656]: Current working directory: /home/n2adil/ece327/proj/uw_tmp.
+# Info: [20013]: Precision will use 6 processor(s).
+# Info: [15002]: Optimizing design view:.work.kirsch.main
+# Info: [1078]: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+# Info: Constraints: Precision Generated Clock Domains:
+# Info: 	Domain Name: xmplr_ClockDomain_clk		Clock Name: clk
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12047]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch.vhd.
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch.v.
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch.vqm.
+# Info: -- Writing file /home/n2adil/ece327/proj/uw_tmp/kirsch.tcl
+# Info: exq_pr_compile_project gen_vcf kirsch 1
+# Info: [659]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 2.0 s secs.
+# Info: [11020]: Overall running time for synthesis: 3.0 s secs.
+# Warning: [11029]: Your synthesis will restart from the compile step.
+# Info: [633]: Loading library initialization file /opt-src/CMC/local/maagaard/tools/mentor/precision/Mgc_home/pkgs/psr/userware/armstrong_rename.tcl
+# Info: [40000]: vhdlorder, Release 2015b.13
+# Info: [40000]: Files sorted successfully.
+# Info: [40000]: hdl-analyze, Release RTLC-Precision 2015b.13
+# Info: [42502]: Analyzing input file "/home/n2adil/ece327/proj/util.vhd" ...
+# Info: [42502]: Analyzing input file "/home/n2adil/ece327/proj/kirsch_synth_pkg.vhd" ...
+# Info: [42502]: Analyzing input file "/home/n2adil/ece327/proj/mem.vhd" ...
+# Info: [42502]: Analyzing input file "/home/n2adil/ece327/proj/kirsch.vhd" ...
+# Info: [656]: Current working directory: /home/n2adil/ece327/proj/uw_tmp.
+# Info: [40000]: RTLC-Driver, Release RTLC-Precision 2015b.13
+# Info: [40000]: Last compiled on Dec 24 2015 14:33:45
+# Info: [44512]: Initializing...
+# Info: [44504]: Partitioning design ....
+# Info: [40000]: RTLCompiler, Release RTLC-Precision 2015b.13
+# Info: [40000]: Last compiled on Dec 24 2015 15:06:12
+# Info: [44512]: Initializing...
+# Info: [44522]: Root Module work.kirsch(main): Pre-processing...
+# Info: [44506]: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Pre-processing...
+# Info: [45251]: Built-in hardware memory core inferred for variable ': mem.mem depth = 256, width = 8'.
+# Info: [44508]: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Compiling...
+# Info: [44523]: Root Module work.kirsch(main): Compiling...
+# Info: [44838]: "/home/n2adil/ece327/proj/kirsch.vhd", line 140: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "o_col".
+# Info: [44838]: "/home/n2adil/ece327/proj/kirsch.vhd", line 142: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "o_row".
+# Info: [44842]: Compilation successfully completed.
+# Info: [44841]: Counter Inferencing === Detected : 2, Inferred (Modgen/Selcounter/AddSub) : 2 (2 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 0), Local Vars : 0 ===
+# Info: [44856]: Total lines of RTL compiled: 356.
+# Info: [44835]: Total CPU time for compilation: 0.0 secs.
+# Info: [44513]: Overall running time for compilation: 1.0 secs.
+# Info: [656]: Current working directory: /home/n2adil/ece327/proj/uw_tmp.
+# Info: [15330]: Doing rtl optimizations.
+# Info: [9028]: "/home/n2adil/ece327/proj/kirsch.vhd", line 176: : Inferred selective adder Instance 'instance:ix1363' of type 'cell:seladd_12_12_12_0_1'
+# Info: [1075]: Constraints: Precision will generate the constraint: create_clock [get_ports clk] -name clk -period 20 -waveform {0 10} on port:clk. Reason: setup_design -frequency. Please override the constraint if needed.
+# Info: [1078]: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+# Info: Constraints: Precision Generated Clock Domains:
+# Info: 	Domain Name: xmplr_ClockDomain_clk		Clock Name: clk
+# Info: [659]: Finished compiling design.
+# Info: [656]: Current working directory: /home/n2adil/ece327/proj/uw_tmp.
+# Info: [20013]: Precision will use 6 processor(s).
+# Info: [15002]: Optimizing design view:.work.kirsch.main
+# Info: [1078]: Constraints: Precision will generate the following clock domain information against the clocks. Since the clock domain information is not provided by the user for the below clocks, all clocks are assumed to be synchronous clocks. This will result in all paths between the clock domains to be analyzed for timing. If this behaviour is not intended for any clock domain or path, please override using -domain option or false path constraint. Among these clocks, clock with the smallest period will be chosen as the default domain and the rest of the clock periods specified using multiply-by or divide-by factor.
+# Info: Constraints: Precision Generated Clock Domains:
+# Info: 	Domain Name: xmplr_ClockDomain_clk		Clock Name: clk
+# Info: [12045]: Starting timing reports generation...
+# Info: [12046]: Timing reports generation done.
+# Info: [12047]: POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch.vhd.
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch.v.
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch.vqm.
+# Info: -- Writing file /home/n2adil/ece327/proj/uw_tmp/kirsch.tcl
+# Info: exq_pr_compile_project gen_vcf kirsch 1
+# Info: [659]: Finished synthesizing design.
+# Info: [11019]: Total CPU time for synthesis: 2.0 s secs.
+# Info: [11020]: Overall running time for synthesis: 3.0 s secs.
+# Info: clk
+# Info: 1
+# Info: 0
+# Info: [3027]: Writing file: /home/n2adil/ece327/proj/uw_tmp/kirsch_logic.sdf.
+# Info: [654]: Using verilog names style for SDF.
+# Info: [634]: Do 'set sdf_names_style vhdl' to use vhdl names style for SDF.
+# Info: Info, Command 'auto_write' finished successfully
+# Info: *** logic synthesis succeeded ***

@@ -1,0 +1,44 @@
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Module : work.uart(main)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Number of FSMs Extracted : 2
+
+1.
+--------------------------------------------------
+Number of States                : 6
+Primary State Variable          : RxFSM[7:0]
+Unreachable state(s)            : 1) 00010000
+                                : 2) 00100000
+Async set/reset state(s)        : 00000001 
+Re-encoding Scheme              : ONEHOT 
+FSM: Info, state encoding table:
+FSM:	Index	                         State Name	                            Literal	                      Encoding
+FSM:	    0	                               Idle	                           00000001	                        000001
+FSM:	    1	                           Start_Rx	                           00000010	                        000010
+FSM:	    2	                            Edge_Rx	                           00001000	                        000100
+FSM:	    3	                           Shift_RX	                           00000100	                        001000
+FSM:	    4	                            Stop_Rx	                           01000000	                        010000
+FSM:	    5	                              RxOVF	                           10000000	                        100000
+
+
+
+
+2.
+--------------------------------------------------
+Number of States                : 4
+Primary State Variable          : TxFSM[4:0]
+Unreachable state(s)            : 1) 01000
+Async set/reset state(s)        : 00001 
+Re-encoding Scheme              : BINARY 
+FSM: Info, state encoding table:
+FSM:	Index	                         State Name	                            Literal	                      Encoding
+FSM:	    0	                               Idle	                              00001	                            00
+FSM:	    1	                            Load_Tx	                              00010	                            01
+FSM:	    2	                           Shift_TX	                              00100	                            10
+FSM:	    3	                            Stop_Tx	                              10000	                            11
+
+
+

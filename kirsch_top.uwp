@@ -1,0 +1,9 @@
+DESIGN_ENTITY = kirsch_top
+DESIGN_ARCH   = main
+DESIGN_VHDL   = util.vhd
+DESIGN_VHDL   =+ mem.vhd
+DESIGN_VHDL   =+ kirsch_synth_pkg.vhd
+DESIGN_VHDL   =+ syn_fifo.vhd
+DESIGN_VHDL   =+ kirsch.vhd
+DESIGN_VHDL   =+ components.vhd
+DESIGN_VHDL   =+ kirsch_top.vhd

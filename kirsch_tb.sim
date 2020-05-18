@@ -1,0 +1,89 @@
+set period     [ examine -radix decimal {sim:/kirsch_tb/period} ]
+set bubbles    [ examine -radix decimal {sim:/kirsch_tb/bubbles} ]
+set num_pixels [ expr 256 * 256 ]
+set run_time   [ expr ($num_pixels + 20) * $period * ($bubbles + 1) ]
+
+echo bubbles=$bubbles
+echo runtime=$run_time
+
+if { $gui_mode } {
+  #------------------------------------------------------
+  # add waves only if in gui mode
+
+  add wave                 sim:/kirsch_tb/clk
+  add wave                 sim:/kirsch_tb/reset
+  add wave                 sim:/kirsch_tb/i_valid
+  add wave -radix unsigned sim:/kirsch_tb/i_pixel
+
+  if { $sim_mode eq "PROG_MODE" } then {
+    #------------------------------------------
+    # signals that are traced in --prog mode
+    # uncomment the lines below and 
+    # add a signal name from your lab3.vhd to the end of each line below
+    # 
+    # add wave -color "cornflower blue" -radix unsigned 
+    # add wave -color "coral"           -radix decimal  
+    # add wave -color "slate blue"                      
+	add wave sim:/kirsch_tb/uut/v
+	add wave sim:/kirsch_tb/uut/wr_en
+
+#	add wave -radix unsigned sim:/kirsch_tb/uut/M_out
+	add wave -radix unsigned sim:/kirsch_tb/uut/M_a
+	add wave -radix unsigned sim:/kirsch_tb/uut/M_b
+	add wave -radix unsigned sim:/kirsch_tb/uut/M_c
+
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_a
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_h
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_g
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_b
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_i
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_f
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_c
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_d
+	add wave -radix unsigned sim:/kirsch_tb/uut/r_e
+
+	add wave  -radix unsigned sim:/kirsch_tb/uut/r1
+	add wave  -radix unsigned sim:/kirsch_tb/uut/r2
+	add wave  -radix unsigned sim:/kirsch_tb/uut/r3
+	add wave  -radix unsigned sim:/kirsch_tb/uut/r4
+	add wave  -radix unsigned sim:/kirsch_tb/uut/r5
+	add wave  -radix unsigned sim:/kirsch_tb/uut/r6
+	add wave  -radix signed sim:/kirsch_tb/uut/r7
+    #------------------------------------------
+  } else {
+    #------------------------------------------
+    # signals that are traced in --chip and --logic mode
+    #------------------------------------------
+  }
+  
+  #------------------------------------------------------
+  # additional signals that are traced in all modes
+  #
+  
+  add wave                 sim:/kirsch_tb/o_mode
+  add wave -radix unsigned sim:/kirsch_tb/o_row
+  add wave -radix unsigned sim:/kirsch_tb/o_col
+  add wave                 sim:/kirsch_tb/o_valid
+  add wave                 sim:/kirsch_tb/o_edge
+  add wave                 sim:/kirsch_tb/o_dir
+  #------------------------------------------------------
+}
+#----------------------------------------------------------------------
+# code to run in both command line and gui mode
+
+run $run_time ns
+# run 11 ms
+
+#----------------------------------------------------------------------
+# if in gui mode, then zoom to see the complete simulation trace
+# if in command line mode, exit
+
+if { $gui_mode } {
+  wave zoom full
+} else {  
+  exit
+}
+
+#----------------------------------------------------------------------
+
+

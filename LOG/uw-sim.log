@@ -1,0 +1,9 @@
+uw-sim /home/ece327/bin/uw-sim --logic --timing kirsch.uwp
+    INFO: Using testbench        : kirsch_tb
+    INFO: Using design entity    : kirsch
+    INFO: Using simulation script: kirsch_tb.sim
+Model Technology ModelSim SE-64 vmap 10.5c Lib Mapping Utility 2016.07 Jul 20 2016
+vmap -c 
+Warning: vmap will not overwrite local modelsim.ini.
+Warning: Library already exists at "work-msim".
+Reading pref.tcl

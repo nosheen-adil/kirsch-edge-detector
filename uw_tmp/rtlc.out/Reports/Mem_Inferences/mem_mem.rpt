@@ -1,0 +1,11 @@
+Inferred RAM
+------------
+  1. Instance: rtlcmem_mem_21_n1
+    File: /home/n2adil/ece327/proj/mem.vhd , Net: mem, Type: single port
+    port 1  read
+    port 1  address width: 8
+    port 1  data width: 8
+    port 2  write
+    port 2  address width: 8
+    port 2  data width: 8
+

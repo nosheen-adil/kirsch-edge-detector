@@ -1,0 +1,62 @@
+//Precision RTL Synthesis 64-bit 2015.2.16 (PS2015.2.1 Production Release) Tue Jan  5 23:04:49 PST 2016
+//
+//Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//           Portions copyright 1991-2008 Compuware Corporation
+//                     UNPUBLISHED, LICENSED SOFTWARE.
+//          CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//
+//Running on Linux n2adil@eceTesla1 #49-Ubuntu SMP Wed Feb 6 09:33:07 UTC 2019 4.15.0-46-generic x86_64
+//
+
+                                =======================                         
+                                Precision 64-bit 2015.2.16                         
+                                =======================                         
+
+
+
+                                FSM EXTRACTION ANALYSIS                         
+                                =======================                         
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Module : work.uart(main)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Number of FSMs Extracted : 2
+
+1.
+--------------------------------------------------
+Number of States                : 6
+Primary State Variable          : RxFSM[7:0]
+Unreachable state(s)            : 1) 00010000
+                                : 2) 00100000
+Async set/reset state(s)        : 00000001 
+Re-encoding Scheme              : ONEHOT 
+FSM: Info, state encoding table:
+FSM:	Index	                         State Name	                            Literal	                      Encoding
+FSM:	    0	                               Idle	                           00000001	                        000001
+FSM:	    1	                           Start_Rx	                           00000010	                        000010
+FSM:	    2	                            Edge_Rx	                           00001000	                        000100
+FSM:	    3	                           Shift_RX	                           00000100	                        001000
+FSM:	    4	                            Stop_Rx	                           01000000	                        010000
+FSM:	    5	                              RxOVF	                           10000000	                        100000
+
+
+
+
+2.
+--------------------------------------------------
+Number of States                : 4
+Primary State Variable          : TxFSM[4:0]
+Unreachable state(s)            : 1) 01000
+Async set/reset state(s)        : 00001 
+Re-encoding Scheme              : BINARY 
+FSM: Info, state encoding table:
+FSM:	Index	                         State Name	                            Literal	                      Encoding
+FSM:	    0	                               Idle	                              00001	                            00
+FSM:	    1	                            Load_Tx	                              00010	                            01
+FSM:	    2	                           Shift_TX	                              00100	                            10
+FSM:	    3	                            Stop_Tx	                              10000	                            11
+
+
+

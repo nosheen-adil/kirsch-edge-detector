@@ -1,0 +1,29 @@
+
+             Clock Constraint Violations 
+ Clock                  Constrained  
+ Name                   Period       Slack 
+ ---------------------- ------------ -------------
+  All clock frequency constraints were met; no violations
+
+
+        Input Constraint Violations 
+ Port                  Input                       
+ Name                  Constraint   Clock           Slack 
+ --------------------- ------------ --------------- ---------
+  All input constraints were met; no violations
+
+
+
+        Output Constraint Violations 
+ Port                  Output                      
+ Name                  Constraint   Clock           Slack 
+ --------------------- ------------ --------------- ---------
+  All output constraints were met; no violations
+
+
+
+        Inout Constraint Violations 
+ Port                  Inout                      
+ Name                  Constraint   Clock           Slack 
+ --------------------- ------------ --------------- ---------
+

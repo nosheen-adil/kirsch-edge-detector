@@ -1,0 +1,4 @@
+work "/home/n2adil/ece327/proj/util.vhd" -2008
+work "/home/n2adil/ece327/proj/kirsch_synth_pkg.vhd" -2008
+work "/home/n2adil/ece327/proj/mem.vhd" -2008
+work "/home/n2adil/ece327/proj/kirsch.vhd" -2008

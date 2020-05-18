@@ -1,0 +1,103 @@
+//  Precision RTL Synthesis 64-bit 2015.2.16 (PS2015.2.1 Production Release) Tue Jan  5 23:04:49 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux n2adil@eceTesla1 #49-Ubuntu SMP Wed Feb 6 09:33:07 UTC 2019 4.15.0-46-generic x86_64
+//  
+//  Start time Sat Mar 30 21:17:18 2019
+
+-- Device: Altera - Stratix IV : EP4SGX70HF35M : 3
+-- CTE report summary..
+-- POST-SYNTHESIS TIMING REPORTS ARE ESTIMATES AND SHOULD NOT BE RELIED ON TO MAKE QoR DECISIONS. For accurate timing information, please run place-and-route (P&R) and review P&R generated timing reports.
+
+================================================================================================
+                   Clock Frequency Report
+
+	Domain                  Clock Name                            Min Period (Freq)             Required Period (Freq)
+	------                  ----------                            -----------------             ----------------------
+	xmplr_ClockDomain_clk   clk                                   3.569 (280.191 MHz)           20.000 (50.000 MHz)
+
+
+================================================================================================
+Setup Timing Analysis of clk
+
+Setup Slack Path Summary
+
+               Data                                                      Data
+       Setup   Path   Source  Dest.                                      End 
+Index  Slack   Delay  Clock   Clock    Data Start Pin     Data End Pin   Edge
+-----  ------  -----  ------  -----  ------------------  --------------  ----
+  1    16.431  3.420  clk     clk    reg_v(2)/clk        reg_r1_ty(0)/d  Rise
+  2    16.433  3.418  clk     clk    reg_r_e(0)/clk      reg_r1_ty(0)/d  Rise
+  3    16.443  3.408  clk     clk    reg_r_e(1)/clk      reg_r1_ty(0)/d  Rise
+  4    16.443  3.408  clk     clk    reg_r_c(0)/clk      reg_r1_ty(0)/d  Rise
+  5    16.453  3.398  clk     clk    reg_r_c(1)/clk      reg_r1_ty(0)/d  Rise
+  6    16.456  3.395  clk     clk    reg_v(1)/clk        reg_r1_ty(0)/d  Rise
+  7    16.511  2.985  clk     clk    reg_q(7)_dup_0/clk  reg_r_h(7)/ena  Rise
+  8    16.542  3.309  clk     clk    reg_r_f(0)/clk      reg_r1_ty(0)/d  Rise
+  9    16.563  2.933  clk     clk    reg_q(5)_dup_2/clk  reg_r_h(7)/ena  Rise
+ 10    16.594  3.257  clk     clk    reg_r_f(1)/clk      reg_r1_ty(0)/d  Rise
+
+                  CTE Path Report
+
+
+Critical path #1, (path slack = 16.431):
+
+SOURCE CLOCK: name: clk period: 20.000000
+     Times are relative to the 1st rising edge
+  DEST CLOCK: name: clk period: 20.000000
+     Times are relative to the 2nd rising edge
+
+NAME                     GATE                     DELAY    ARRIVAL DIR  FANOUT
+reg_v(2)/clk          dffeas                               0.000   up
+reg_v(2)/q            dffeas                     0.047     0.047   up
+v(2)                  (net)                      0.577                  36
+ix41459z17685/datad   stratixiv_lcell_comb                 0.624   up
+ix41459z17685/combout stratixiv_lcell_comb       0.337     0.961   up
+i2_val(0)             (net)                      0.410                   2
+ix41459z17684/dataa   stratixiv_lcell_comb                 1.371   up
+ix41459z17684/combout stratixiv_lcell_comb       0.436     1.807   up
+nx41459z5             (net)                      0.112                   1
+ix41459z17681/datad   stratixiv_lcell_comb                 1.919   up
+ix41459z17681/combout stratixiv_lcell_comb       0.337     2.256   up
+nx41459z4             (net)                      0.112                   1
+ix41459z17675/dataf   stratixiv_lcell_comb                 2.368   up
+ix41459z17675/combout stratixiv_lcell_comb       0.087     2.455   up
+nx41459z2             (net)                      0.516                   8
+ix41057z17674/datad   stratixiv_lcell_comb                 2.971   up
+ix41057z17674/combout stratixiv_lcell_comb       0.337     3.308   up
+nx41057z1             (net)                      0.112                   1
+reg_r1_ty(0)/d        dffeas                               3.420   up
+
+		Initial edge separation:     20.000
+		Source clock delay:      -    0.000
+		Dest clock delay:        +    0.000
+		                        -----------
+		Edge separation:             20.000
+		Setup constraint:        -    0.149
+		                        -----------
+		Data required time:          19.851
+		Data arrival time:       -    3.420   ( 46.23% cell delay, 53.77% net delay )
+		                        -----------
+		Slack:                       16.431
+
+
+
+================================================================================================
+                   Input Delay Report
+
+	Input                  Clock Name                            Slack (ns)
+	-----                  ----------                            ----------
+	No input delay constraints.
+
+
+================================================================================================
+                   Output Delay Report
+
+	Output                 Clock Name                            Slack (ns)
+	------                 ----------                            ----------
+	No output delay constraints.

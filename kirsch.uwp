@@ -1,0 +1,14 @@
+LIB_VHDL      = util.vhd kirsch_synth_pkg.vhd
+
+TB_ENTITY     =  kirsch_tb
+TB_ARCH       =  main
+TB_VHDL       =  string_pkg.vhd
+TB_VHDL       =+ kirsch_unsynth_pkg.vhd
+TB_VHDL       =+ kirsch_tb.vhd
+
+DESIGN_ENTITY =  kirsch
+DESIGN_ARCH   =  main
+DESIGN_VHDL   =  mem.vhd
+DESIGN_VHDL   =+ kirsch.vhd
+
+SIM_SCRIPT    = kirsch_tb.sim

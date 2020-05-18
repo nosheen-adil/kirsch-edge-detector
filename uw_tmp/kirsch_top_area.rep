@@ -1,0 +1,56 @@
+//  Precision RTL Synthesis 64-bit 2015.2.16 (PS2015.2.1 Production Release) Tue Jan  5 23:04:49 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//             Portions copyright 1991-2008 Compuware Corporation
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+//  
+//  Running on Linux n2adil@eceTesla1 #49-Ubuntu SMP Wed Feb 6 09:33:07 UTC 2019 4.15.0-46-generic x86_64
+//  
+//  Start time Thu Mar 28 13:15:33 2019
+
+***************************************************************
+Device Utilization for 10M08SAE144C8GES
+***************************************************************
+Resource                          Used    Avail   Utilization
+---------------------------------------------------------------
+IOs                               34      -            -
+LUTs                              529     8064      6.56%
+Registers                         363     8064      4.50%
+Memory Bits                       10240   387072    2.65%
+DSP block 9-bit elems             0       48        0.00%
+---------------------------------------------------------------
+
+***********************************************
+
+Library: work    Cell: kirsch_top    View: main
+
+***********************************************
+
+  Cell                     Library  References     Total Area
+
+ GND                       max10         1 x
+ NOT                       max10        15 x
+ TRI                       max10        11 x      1     11 TRIs
+ VCC                       max10         1 x
+ dffeas                    max10       363 x      1    363 Registers
+ fiftyfivenm_lcell_comb    max10       529 x      1    529 LUTs
+ ram_dq_8_0                OPERATORS     1 x   2048   2048 Memory Bits
+ ram_dq_8_1                OPERATORS     1 x   2048   2048 Memory Bits
+ ram_dq_8_2                OPERATORS     1 x   2048   2048 Memory Bits
+ ram_dq_8_3                OPERATORS     1 x   2048   2048 Memory Bits
+ ram_dq_8_4                OPERATORS     1 x   2048   2048 Memory Bits
+
+ Number of ports :                      34
+ Number of nets :                     1106
+ Number of instances :                 925
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Number of LCs :                         0
+ Number of LUTs :                      529
+ Number of Memory Bits :             10240
+ Number of Registers :                 363
+ Number of TRIs :                       11
+ Number of accumulated instances :     930
